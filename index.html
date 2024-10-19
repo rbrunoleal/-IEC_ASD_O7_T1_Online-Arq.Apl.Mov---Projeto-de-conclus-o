@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Despesas em Viagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form select, form button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            background-color: #d3d3d3; /* Cinza mais escuro */
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestão de Despesas em Viagens</h1>
+        <form id="expense-form">
+            <input type="text" id="description" placeholder="Descrição" required>
+            <input type="number" id="quantity" placeholder="Quantidade" required>
+            <input type="number" id="value" placeholder="Valor" required>
+            <select id="currency-from" required>
+                <option value="USD">USD</option>
+                <option value="BRL">BRL</option>
+                <!-- Add more currencies as needed -->
+            </select>
+            <select id="currency-to" required>
+                <option value="USD">USD</option>
+                <option value="BRL">BRL</option>
+                <!-- Add more currencies as needed -->
+            </select>
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="expense-list"></ul>
+        <footer>
+            <div>Total em moeda de origem: <span id="total-origin">0</span> <span id="origin-currency">USD</span></div>
+            <div>Total em moeda de destino: <span id="total-destination">0</span> <span id="destination-currency">BRL</span></div>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
